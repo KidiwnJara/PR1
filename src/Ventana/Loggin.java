@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package Ventana;
-
+import java.awt.Image;
+import java.awt.Toolkit;
 /**
  *
  * @author kidiwnjt
@@ -17,6 +18,11 @@ public class Loggin extends javax.swing.JFrame {
     public Loggin() {
         initComponents();
         this.setLocationRelativeTo(null);//Centrar La ventana al iniciar la interfaf
+    }
+    @Override
+     public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/taller.png"));
+        return retValue;
     }
 
     /**
@@ -36,6 +42,8 @@ public class Loggin extends javax.swing.JFrame {
         jLabel1Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Salir.setBackground(java.awt.SystemColor.activeCaption);
